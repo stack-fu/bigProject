@@ -1,2 +1,2 @@
 # bigProject
-minewebsite
+mywebsite
