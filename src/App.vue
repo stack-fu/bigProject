@@ -5,18 +5,27 @@
 </template>
 
 <script>
-// import storage from './storage/index';
+
 export default {
   name: 'app',
+  data(){
+    return {
+      res:{},
+    }
+  },
   components: {
   },
   mounted() {
-    // storage.setItem('a',1);
-    // storage.setItem('b',2);
-    // storage.setItem('usr',{'c':1});
-    // storage.setItem('abc',{'d':1}, 'usr');
-    // storage.clear('c', 'usr');
+    // jicheng api
+    // this.axios.get('/user/login').then((res)=>{
+    //   this.res = res;
+    // })
   }
 }
 </script>
+<style lang="scss">
+@import "./assets/scss/reset.scss";
+@import "./assets/scss/button.scss";
 
+/*@import "./";*/
+</style>

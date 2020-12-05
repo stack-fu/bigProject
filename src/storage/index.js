@@ -29,6 +29,7 @@ export  default {
         return JSON.parse(window.sessionStorage.getItem(STORAGE_KEY) || '{}');
     },
     clear(key, module_name){
+        if(!val[module_name])return;
         let val = this.getStorage();
         if(module_name){
             delete val[module_name][key];
