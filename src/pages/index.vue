@@ -62,12 +62,12 @@
       </div>
       <div class="ads-box">
         <a :href="'/#/product/'+item.id" v-for="(item, index) in adsList" :key="index">
-          <img :src="item.img" alt="">
+          <img v-lazy="item.img" alt="">
         </a>
       </div>
       <div class="banner">
         <a href="/#/product/30">
-          <img src="/imgs/banner-1.png" alt="">
+          <img v-lazy="'/imgs/banner-1.png'" alt="">
         </a>
       </div>
     </div>
@@ -76,19 +76,19 @@
         <h2>手机</h2>
         <div class="wrapper">
           <div class="banner-left">
-            <a href="/#/product/35"><img src="/imgs/mix-alpha.jpg" alt=""></a>
+            <a href="/#/product/35"><img v-lazy="'/imgs/mix-alpha.jpg'" alt=""></a>
           </div>
           <div class="list-box">
             <div class="list" v-for="(item, index) in phoneList" :key="index">
               <div class="item" v-for="(j, i) in item" :key="i">
                 <span :class="{'new-pro':Math.floor(Math.random()*10)%2==0}">新品</span>
                 <div class="item-img">
-                  <img :src="j.mainImage" alt="">
+                  <img v-lazy="j.mainImage" alt="">
                 </div>
                 <div class="item-info">
                   <h3>{{ j.name }}</h3>
                   <p>{{ j.subtitle }}</p>
-                  <p class="price" @click="addCart(item.id)">{{ j.price}}元</p>
+                  <p class="price" @click="addCart(j.id)">{{ j.price}}元</p>
                 </div>
               </div>
             </div>
@@ -225,17 +225,17 @@ export default {
         this.phoneList = [res.list.slice(0,4),res.list.slice(4,8)];
       })
     },
-    addCart(){
-      this.showModal = true;
-      // this.axios.post('/carts',{
-      //   productId:id,
-      //   selected:true,
-      // }).then(()=>{
-      //
-      // }).catch(()=>{this.showModal = true})
+    addCart(id){
+      this.axios.post('/carts',{
+        productId:id,
+        selected:true,
+      }).then((res={cartTotalQuantity:0})=>{
+        this.showModal = true;
+        this.$store.dispatch('saveCartCount',res.cartTotalQuantity);
+      }).catch(()=>{this.showModal = true})
     },
     goToCart(){
-      this.router.push('/cart');
+      this.$router.push('/cart');
     }
   }
   }
