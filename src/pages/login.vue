@@ -55,13 +55,23 @@ export default {
         password
       }).then((res)=>{
         // console.log(res)
-        this.$cookie.set('userId',res.id,{expires:'1M'});
+        this.$cookie.set('userId',res.id,{expires:'Session'});//会话级别，关闭浏览器才会消失
         this.$store.dispatch('saveUserName', res.username);
 
         // this.$store.dispatch('saveCartCount',);
-        this.$router.push('/index');
+        this.$router.push({
+          // path:'/index',//***//query 在URL中？参数//***//
+          // query:{
+          //   from:'login',
+          // }
+          name:'index',//**//name对应router中name名称//**//
+          params:{
+            from:'login'
+          }
+        });
         // this.getCartCount();
-      }).catch((res)=>{alert(res.msg)
+      }).catch(()=>{
+        // this.$message.warning(res.msg)
       })
     },
     register(){
@@ -70,9 +80,9 @@ export default {
         username,
         password
       }).then(()=>{
-        alert('注册成功');
+        this.$message.success('注册成功');
       }).catch((res)=>{
-        alert(res.msg);
+        this.$message.error(res.msg);
       })
     }
     },
