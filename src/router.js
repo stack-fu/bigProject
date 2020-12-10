@@ -56,6 +56,11 @@ export default new Router({
                     name:'order-list',
                     component:orderList,
                 },{
+                    path:'list1',
+                    name:'order-list-1',
+                    component:orderList-1,
+                },
+                {
                     path:'confirm',
                     name:'order-confirm',
                     component:orderConfirm,

@@ -10,13 +10,13 @@
         <h2>{{ product.name }}</h2>
         <h3>{{ product.subtitle }}</h3>
         <p>
-          <a href="" id="">全球首款双频 GP</a>
+          <a href="">全球首款双频 GP</a>
           <span>|</span>
-          <a href="" id="">骁龙845</a>
+          <a href="">骁龙845</a>
           <span>|</span>
-          <a href="" id="">AI 变焦双摄</a>
+          <a href="">AI 变焦双摄</a>
           <span>|</span>
-          <a href="" id="">红外人脸识别</a>
+          <a href="">红外人脸识别</a>
         </p>
         <div class="price">
           <span>￥<em>{{ product.price }}元</em></span>

@@ -1,5 +1,7 @@
+
+
 <template>
-  <div class="order-list">
+  <div class="order-list-1">
     <order-header title="订单列表">
       <template v-slot:tip>
         <span>请谨防钓鱼链接或诈骗电话</span>
@@ -70,7 +72,7 @@ import Loading from "@/components/Loading"
 import NoData from "@/components/NoData";
 import { Pagination } from 'element-ui'
 export default {
-name: "orderList",
+  name: "orderList1",
   components:{
     OrderHeader,
     Loading,
@@ -87,7 +89,7 @@ name: "orderList",
     }
   },
   mounted() {
-  this.getOrderList();
+    this.getOrderList();
   },
   methods:{
     getOrderList(){
@@ -102,7 +104,7 @@ name: "orderList",
       }).catch(()=>{
         this.loading = false;
       })
-      },
+    },
     goPay(orderNum){
       //this.$router.push('/....)
       /*
@@ -132,7 +134,7 @@ name: "orderList",
 <style lang="scss">
 @import './../assets/scss/config.scss';
 @import './../assets/scss/mixin.scss';
-.order-list{
+.order-list-1{
   .wrapper{
     background-color:$colorJ;
     padding-top:33px;
@@ -197,7 +199,10 @@ name: "orderList",
       .el-pagination.is-background .el-pager li:not(.disabled).active{
         background-color: #FF6600;
       }
-
+      .el-button--primary{
+        background-color: #FF6600;
+        border-color: #FF6600;
+      }
       .load-more,.scroll-more{
         text-align:center;
       }

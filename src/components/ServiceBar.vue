@@ -29,6 +29,9 @@ export default {
       //height: 20px;
       text-align: center;
       border-right: 1px solid #e5e5e5;
+      &:last-child{
+        border-right: none;
+      }
       //line-height: 20px;
       span{
         display: inline-block;
