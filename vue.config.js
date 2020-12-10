@@ -11,5 +11,11 @@ module.exports = {
                 }
             }
         }
+    },
+    publicPath:'/mimall',
+    indexPath:'mimall.html',
+    productionSourceMap:false,
+    chainWebpack: (config)=>{
+        config.plugins.delete('prefetch');//删除预加载
     }
 }

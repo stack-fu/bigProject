@@ -12,7 +12,7 @@
           <a href="javascript:;" v-if="username">{{ username }}</a>
           <a href="javascript:;" v-if="!username" @click="login">登录</a>
           <a href="javascript:;" v-if="username" @click="logout">退出</a>
-          <a href="/#/order/list" v-if="username">我的订单</a>
+          <a href="/mimall#/order/list" v-if="username">我的订单</a>
           <a href="javascript:;" class="my-cart" @click="goToCart"><span class="icon-cart"></span>购物车({{cartCount}})</a>
         </div>
       </div>
@@ -20,7 +20,7 @@
     <div class="nav-header">
       <div class="container">
         <div class="header-logo">
-          <a href="/#/index"></a>
+          <a href="/mimall#/index"></a>
         </div>
         <div class="header-menu">
           <div class="item-menu">
@@ -28,7 +28,7 @@
             <div class="children">
               <ul>
                 <li class="product" v-for="(item,index) in phoneList" :key="index">
-                  <a :href="'/#/product/'+item.id" target="_blank">
+                  <a :href="'/mimall#/product/'+item.id" target="_blank">
                     <div class="pro-img">
                       <img v-lazy="item.mainImage" :alt="item.subtitle">
                     </div>

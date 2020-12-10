@@ -10,7 +10,7 @@
       <a href="http://www.miliao.com/" target="_blank">米聊</a><span>|</span>
       <a href="https://xiaomi.tmall.com/" target="_blank">小米天猫店</a>
     </div>
-    <div class="copyright">Copyright ^2019 <span class="domain">mi.futurefe.com</span> All Rights Reserved.</div>
+    <div class="copyright">Copyright ^2019 <span class="domain">mi.com</span> All Rights Reserved.</div>
   </div>
 </template>
 

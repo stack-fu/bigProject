@@ -2,16 +2,6 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import home from "./pages/home";
 import index from "./pages/index";
-import product from "./pages/product";
-import detail from "./pages/detail";
-import cart from "./pages/cart";
-import order from "./pages/order";
-import orderList from "./pages/orderList";
-import orderConfirm from "./pages/orderConfirm";
-import orderPay from "./pages/orderPay";
-import alipay from "@/pages/alipay";
-import login from "@/pages/login";
-//@ => . ?
 
 Vue.use(Router);
 
@@ -30,48 +20,44 @@ export default new Router({
                 },{
                     path:'product/:id',
                     name:'product',
-                    component:product,
+                    component:()=>import('./pages/product'),
                 },{
                     path:'detail/:id',
                     name:'detail',
-                    component:detail,
+                    component:()=>import('./pages/detail'),
                 },
             ]
         },
         {
             path:'/login',
             name:'login',
-            component:login,
+            component:()=>import('./pages/login'),
         },{
             path:'/cart',
             name:'cart',
-            component:cart,
+            component:()=>import('./pages/cart'),
         },{
             path:'/order',
             name:'order',
-            component:order,
+            component:()=>import('./pages/order'),
             children:[
                 {
                     path:'list',
                     name:'order-list',
-                    component:orderList,
-                },{
-                    path:'list1',
-                    name:'order-list-1',
-                    component:orderList-1,
+                    component:()=>import('./pages/orderList'),
                 },
                 {
                     path:'confirm',
                     name:'order-confirm',
-                    component:orderConfirm,
+                    component:()=>import('./pages/orderConfirm'),
                 },{
                     path:'pay',
                     name:'order-pay',
-                    component:orderPay,
+                    component:()=>import('./pages/orderPay'),
                 },{
                     path:'alipay',
                     name:'alipay',
-                    component:alipay,
+                    component:()=>import('./pages/alipay'),
                 },
             ]
         },
