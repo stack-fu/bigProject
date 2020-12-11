@@ -10,10 +10,11 @@ module.exports = {
                     '/api':''
                 }
             }
-        }
+        },
     },
-    publicPath:'/mimall',
-    indexPath:'mimall.html',
+    publicPath:'./',
+    outputDir:'mimall',
+    //indexPath:'index.html',
     productionSourceMap:false,
     chainWebpack: (config)=>{
         config.plugins.delete('prefetch');//删除预加载

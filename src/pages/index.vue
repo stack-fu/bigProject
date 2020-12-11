@@ -10,8 +10,8 @@
                 <!--if real need to change the v-for ul!!-->
                 <ul v-for="(item,index) in menuList" :key="index">
                   <li v-for="(sub,ind) in item" :key="ind">
-                    <a :href="sub?'/mimall#/product/'+sub.id:'/mimall#/product/30'">
-                      <img :src="sub?sub.img:'/imgs/item-box-1.png'" alt="">
+                    <a :href="sub?'/#/product/'+sub.id:'/#/product/30'">
+                      <img :src="sub?sub.img:'./imgs/item-box-1.png'" alt="">
                       <span>
                         {{ sub?sub.name:'小米9' }}
                       </span>
@@ -53,7 +53,7 @@
         </div>
         <swiper class="swiper" :options="swiperOptions">
           <swiper-slide v-for="(item, index) in slideList" :key="index">
-            <a :href="'/mimall#/product/'+item.id"><img :src="item.img" alt=""></a>
+            <a :href="'/#/product/'+item.id"><img :src="item.img" alt=""></a>
           </swiper-slide>
           <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
           <div class="swiper-button-prev swiper-button-blue" slot="button-prev"></div>
@@ -61,12 +61,12 @@
         </swiper>
       </div>
       <div class="ads-box">
-        <a :href="'/mimall#/product/'+item.id" v-for="(item, index) in adsList" :key="index">
+        <a :href="'/#/product/'+item.id" v-for="(item, index) in adsList" :key="index">
           <img v-lazy="item.img" alt="">
         </a>
       </div>
       <div class="banner">
-        <a href="/mimall#/product/30">
+        <a href="/#/product/30">
           <img v-lazy="'/imgs/banner-1.png'" alt="">
         </a>
       </div>
@@ -76,7 +76,7 @@
         <h2>手机</h2>
         <div class="wrapper">
           <div class="banner-left">
-            <a href="/mimall#/product/35"><img v-lazy="'/imgs/mix-alpha.jpg'" alt=""></a>
+            <a href="/#/product/35"><img v-lazy="'/imgs/mix-alpha.jpg'" alt=""></a>
           </div>
           <div class="list-box">
             <div class="list" v-for="(item, index) in phoneList" :key="index">

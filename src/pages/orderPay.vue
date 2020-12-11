@@ -112,7 +112,7 @@ export default{
     paySubmit(id){
       this.payType = id;
       if (id == 1){
-        window.open('/mimall#/order/alipay?orderId='+this.orderNum,'_blank');
+        window.open('/#/order/alipay?orderId='+this.orderNum,'_blank');
       }else if(id == 2){
         this.axios.post('/pay',{
           orderId:this.orderNum,

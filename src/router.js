@@ -6,6 +6,15 @@ import index from "./pages/index";
 Vue.use(Router);
 
 export default new Router({
+    mode:'hash',
+    //base: 'mimall',
+    scrollBehavior(to, from, savedPosition){
+        if(savedPosition){
+            return savedPosition;
+        } else {
+            return { x: 0, y: 0}
+        }
+    },
     routes:[
         {
             path:'/',

@@ -22,8 +22,8 @@ axios.interceptors.response.use(function (response){
   if(res.status === 0){
     return res.data;
   }else if(res.status === 10){
-    if(path !== '#/index'){
-      window.location.href = '/#/login';
+    if(path !== 'mimall#/index'){
+      window.location.href = '/mimall#/login';
     }
     return Promise.reject(res);
   }else{
