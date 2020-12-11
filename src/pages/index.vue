@@ -11,7 +11,7 @@
                 <ul v-for="(item,index) in menuList" :key="index">
                   <li v-for="(sub,ind) in item" :key="ind">
                     <a :href="sub?'/#/product/'+sub.id:'/#/product/30'">
-                      <img :src="sub?sub.img:'./imgs/item-box-1.png'" alt="">
+                      <img :src="sub?sub.img:'/imgs/item-box-1.png'" alt="">
                       <span>
                         {{ sub?sub.name:'小米9' }}
                       </span>
